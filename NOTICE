@@ -1,0 +1,13 @@
+NEB RADAR Measurement Library
+Copyright 2026 The NEB RADAR Measurement Library authors
+
+Code: licensed under the Apache License, Version 2.0 (LICENSE).
+Rules data (data/): licensed under Creative Commons Attribution 4.0 International (LICENSES/CC-BY-4.0.txt).
+
+The rules data is derived from: European Commission, Joint Research Centre (2024),
+"A practical guide to the New European Bauhaus self-assessment method and tool", JRC139118,
+CC BY 4.0, https://publications.jrc.ec.europa.eu/repository/handle/JRC139118
+Changes: extracted from the report and restructured as machine-readable data, with short descriptions.
+
+Independent implementation. Not affiliated with, endorsed by or maintained by the Joint Research Centre
+or the European Commission.

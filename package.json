@@ -1,0 +1,17 @@
+{
+  "name": "neb-radar-measurement",
+  "version": "0.1.0",
+  "description": "Machine-readable scoring rules for the 83 indicators of the JRC139118 New European Bauhaus self-assessment method, with a deterministic reference engine and repeatability tests. Independent implementation, not affiliated with the JRC or the European Commission.",
+  "license": "Apache-2.0 AND CC-BY-4.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": ["src", "data", "LICENSE", "LICENSES", "NOTICE", "README.md"],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "5.1.0"
+  }
+}
