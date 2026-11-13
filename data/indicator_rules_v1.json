@@ -7801,7 +7801,7 @@
      "question": "In the context of the project, to what extent land is de-commodified? (single selection allowed)",
      "options": {
       "a": "Land is the private property of the developer or subsequent property owners (residents or landlords) (answers 1–4 allowed in the following metric).",
-      "b": "Land is de-commodified — either owned by a public or not-for-profit organisation or ownership of a co-op or other collective organisations — but no guarantees on its future status exist (answers 5–7 allowed in the following metric).",
+      "b": "Land is de-commodified (either owned by a public or not-for-profit organisation or ownership of a co-op or other collective organisations), but no guarantees on its future status exist (answers 5–7 allowed in the following metric).",
       "c": "Land is de-commodified, and this status is guaranteed in the long term through ad hoc legal mechanisms (e.g. community land trusts) (answers 5–7 allowed in the following metric)."
      }
     },
