@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-export const RULES_FINGERPRINT = "47c9dd8da260a59c9f5cfe157f471e38ccb1b741dcc6cc2bd67c1e615d1b57cc";
+export const RULES_FINGERPRINT = "ac6d9606ea002d74ccec2e4d665250dcec628c8f09f2b535f80eaa6f5aaf91e7";
 
 const canonical = (v: unknown): unknown =>
   Array.isArray(v) ? v.map(canonical)

@@ -34,7 +34,7 @@
       "label": "Baseline: average primary energy demand of the building stock",
       "min": 0,
       "baseline": true,
-      "help": "Value and its source (EU level per building type and climate zone).",
+      "help": "Value and its source (the building's energy certificate or a national reference value for the building stock).",
       "unit": "kWh/m²·year"
      }
     ],
