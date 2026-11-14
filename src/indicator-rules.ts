@@ -1,9 +1,9 @@
 // Indicator scoring rules of JRC139118 in machine-readable form. Versioned: a result always
 // records the rules version it was computed with, and a change in the rules is a new version.
-import data from "../data/indicator_rules_v1.json";
+import data from "../data/indicator_rules_v2.json";
 import type { IndicatorRuleEntry } from "./rules-engine";
 
-export const RULES_VERSION = "indicator-rules-v1";
+export const RULES_VERSION = "indicator-rules-v2";
 
 const ENTRIES = (data as unknown as { indicators: IndicatorRuleEntry[] }).indicators;
 const BY_CODE = new Map(ENTRIES.map((e) => [e.code, e]));

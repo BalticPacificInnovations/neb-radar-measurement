@@ -10,7 +10,8 @@ The European Commission's Joint Research Centre (JRC) published the New European
 
 | Path | What it is | Licence |
 |---|---|---|
-| `data/indicator_rules_v1.json` | The scoring rules for all 83 indicators: inputs, units, baseline requirements, choice tables or expressions, variants by scale and building use, and the report reference for every rule | CC BY 4.0 |
+| `data/indicator_rules_v2.json` | The scoring rules for all 83 indicators: inputs, units, baseline requirements, choice tables or expressions, variants by scale and building use, and the report reference for every rule | CC BY 4.0 |
+| `data/indicator_rules_v1.json` | The previous rules version, kept so that results computed with it can be traced. See `CHANGELOG.md` | CC BY 4.0 |
 | `src/rules-engine.ts` | The reference engine: evaluates a rule against answers, without `eval` | Apache-2.0 |
 | `src/score-from-answers.ts` | Computes the scores for a set of answers and finds stored scores that do not follow from their answers | Apache-2.0 |
 | `src/indicator-rules.ts` | Loads the rules and exposes the rules version | Apache-2.0 |

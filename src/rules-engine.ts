@@ -5,7 +5,7 @@
  * and no AI sets one: people (or open data, or an AI indication that is labelled as such) supply answers and
  * measured values, and this module turns them into the indicator score. Same answers, same rules, same result, every time.
  *
- * Pure and browser-safe. The rule data lives in data/indicator_rules_v1.json.
+ * Pure and browser-safe. The rule data lives in data/indicator_rules_v2.json.
  */
 
 export type OptionMap = Record<string, string>;
@@ -28,9 +28,11 @@ export type NumberInput = {
   max?: number;
   /** A baseline value: must carry a source (EU-level baselines). */
   baseline?: boolean;
+  /** Only asked and counted when one of these keys is chosen in another input (the method's "If [...] has been selected"); worth 0 otherwise. */
+  requires?: { input: string; keys: string[] };
   help?: string;
 };
-export type SelectInput = { id: string; type: "select"; label: string; options: Array<{ key: string; label: string; value: number }>; help?: string };
+export type SelectInput = { id: string; type: "select"; label: string; options: Array<{ key: string; label: string; value: number }>; requires?: { input: string; keys: string[] }; help?: string };
 export type ChecklistInput = {
   id: string;
   type: "checklist";
@@ -45,7 +47,7 @@ export type ChecklistInput = {
   cap?: number;
   help?: string;
 };
-export type RatingInput = { id: string; type: "rating"; label: string; min: number; max: number; anchors: Record<string, string>; help?: string };
+export type RatingInput = { id: string; type: "rating"; label: string; min: number; max: number; anchors: Record<string, string>; requires?: { input: string; keys: string[] }; help?: string };
 export type RuleInput = NumberInput | SelectInput | ChecklistInput | RatingInput;
 
 /** Formula, checklist or composite rule: inputs, then one expression that gives the score. */
@@ -136,8 +138,8 @@ export function evaluateRule(ruleIn: IndicatorRule | undefined, answers: Answers
   const vars: Record<string, number> = {};
   const missing: string[] = [];
   for (const inp of rule.inputs) {
-    // A list that only counts after a given choice elsewhere: not needed (and worth 0) until that choice is made.
-    if (inp.type === "checklist" && inp.requires) {
+    // An input that only counts after a given choice elsewhere: not needed (and worth 0) until that choice is made.
+    if (inp.requires) {
       const other = a[inp.requires.input];
       const chosen = Array.isArray(other) ? other.map(String) : typeof other === "string" ? [other] : [];
       if (!chosen.some((k) => inp.requires!.keys.includes(k))) { vars[inp.id] = 0; continue; }
